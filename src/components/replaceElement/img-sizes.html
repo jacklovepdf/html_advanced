@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>img element</title>
+</head>
+<body>
+    <header>i am header</header>
+    <main>
+        <img
+            src="./resources/image1.jpeg" 
+            alt="i am image1"
+            sizes="(max-width: 480px) 400px,
+                    (max-width: 720px) 600px"
+            srcset="./resources/image1.jpeg 400w,
+                    ./resources/image2.jpg 600w"
+            >
+    </main>
+    <footer>i am footer</footer>
+</body>
+</html>
