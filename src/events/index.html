@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+    <style>
+        #parent{
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+        }
+        #child1{
+            width: 100%;
+            height: 100px;
+            background-color: gray;
+        }
+        #child2{
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+        }
+        #child3_child{
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 100px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child1">child1</div>
+        <div id="child2">
+            <div id="child3_child">child3_child</div>
+        </div>
+    </div>
+    <script>
+        let ele = document.getElementById("child2");
+        ele.addEventListener('click', function(ele, ev){
+            console.log("child2======>", ev);
+        });
+        let parent = document.getElementById("parent");
+        parent.addEventListener('click', function(ele, ev){
+            console.log("parent======>", ev);
+        });
+    </script>
+</body>
+</html>

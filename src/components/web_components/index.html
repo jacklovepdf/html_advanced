@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>script test</title>
+    <script>
+        customElements.define('custom-element',
+            class MyCustomElement extends HTMLElement {
+                constructor() {
+                    super();
+                    //创建<p stype='color:red'></p>
+                    const pElem = document.createElement('p');
+                    pElem.textContent = this.textContent;
+                    pElem.style.color = 'red';
+                    //加入根节点
+                    const shadowRoot = this.attachShadow({mode: 'closed'});
+                    shadowRoot.appendChild(pElem);
+                }
+            }
+        )
+    </script>
+</head>
+<body>
+    <custom-element>红色字体的段落！</custom-element>
+</body>
+</html>

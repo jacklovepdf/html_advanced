@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>script test</title>
+</head>
+<body>
+    <div>11111111111</div>
+    <script>
+        window.onerror = function(...args){
+            // 外联脚本与页面所在域不同时，onerror捕获的error信息堆栈不正确
+            console.log('args========>', args);
+        }
+    </script>
+    <script src="http://127.0.0.1:8888/index.js"></script>
+    <!-- <script src="./index.js"></script> -->
+    <script>
+        console.log('end======>');
+    </script>
+</body>
+</html>
